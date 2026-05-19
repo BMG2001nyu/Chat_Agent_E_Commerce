@@ -14,10 +14,10 @@ const QUICK_ACTIONS = [
   { label: '📦 Track my order', prompt: 'I want to track my order PS-100422.' },
 ];
 
-marked.setOptions({ breaks: true });
+marked.use({ breaks: true });
 
 function renderMarkdown(text) {
-  return { __html: marked(text) };
+  return { __html: marked.parse(text) };
 }
 
 function InstallationGuideCard({ guide }) {
