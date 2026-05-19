@@ -1,0 +1,813 @@
+{
+  "parts": [
+    {
+      "part_number": "PS11752778",
+      "name": "Ice Maker Assembly",
+      "category": "refrigerator",
+      "price": 94.51,
+      "rating": 4.7,
+      "review_count": 1847,
+      "description": "OEM ice maker assembly for compatible Whirlpool, KitchenAid, and Maytag side-by-side refrigerators. Includes the complete ice maker module, mounting bracket, and wire harness. This is a direct OEM replacement — no modification required.",
+      "in_stock": true,
+      "difficulty": "Easy",
+      "repair_time": "15-30 minutes",
+      "part_type": "ice_maker",
+      "compatible_brands": ["Whirlpool", "KitchenAid", "Maytag", "Amana"],
+      "compatible_models": [
+        "WRS325SDHZ01", "WRS325SDHZ04", "WRS325SDHZ05", "WRS325SDHB01",
+        "WRF535SWHZ00", "WRF535SWHZ01", "WRF535SWHZ02",
+        "WRS555SIHZ00", "WRS555SIHZ01", "WRS555SIHZ02",
+        "WRT518SZFM00", "WRT518SZFM01",
+        "KRFF507HPS00", "KRFF507HPS01", "KRFF507HBS00",
+        "MFI2570FEZ00", "MFI2570FEZ01",
+        "GSF26C4EXY00", "GSF26C4EXA00",
+        "WRX735SDHZ00", "WRX735SDHZ01",
+        "WRF767SDHZ00", "WRF767SDHZ01",
+        "ED5FHAXVQ10", "ED5FHAXVB10"
+      ],
+      "symptoms": [
+        "ice maker not making ice",
+        "ice maker stopped working",
+        "no ice production",
+        "ice maker not working",
+        "refrigerator not making ice",
+        "ice dispenser empty",
+        "ice maker broken"
+      ]
+    },
+    {
+      "part_number": "PS11748465",
+      "name": "Refrigerator Water Filter (EveryDrop EDR1RXD1)",
+      "category": "refrigerator",
+      "price": 38.63,
+      "rating": 4.8,
+      "review_count": 3241,
+      "description": "NSF certified replacement water filter. Reduces chlorine taste, odor, lead, and other contaminants. Fits inside the refrigerator — no tools needed. Replace every 6 months or 200 gallons for optimal performance.",
+      "in_stock": true,
+      "difficulty": "Easy",
+      "repair_time": "5 minutes",
+      "part_type": "water_filter",
+      "compatible_brands": ["Whirlpool", "Maytag", "Amana", "KitchenAid"],
+      "compatible_models": [
+        "WRS325SDHZ01", "WRS325SDHZ04", "WRS325SDHZ05",
+        "WRF535SWHZ00", "WRF535SWHZ01",
+        "WRS555SIHZ00", "WRS555SIHZ01",
+        "WRT518SZFM00", "WRT518SZFM01",
+        "WRX735SDHZ00", "WRX735SDHZ01",
+        "MFI2570FEZ00", "MFI2570FEZ01",
+        "KRFF507HPS00"
+      ],
+      "symptoms": [
+        "water dispenser slow",
+        "water tastes bad",
+        "water has odor",
+        "filter light on",
+        "change water filter",
+        "water filter replacement",
+        "cloudy water from dispenser"
+      ]
+    },
+    {
+      "part_number": "PS11752784",
+      "name": "Refrigerator Fresh Food Door Gasket",
+      "category": "refrigerator",
+      "price": 71.59,
+      "rating": 4.5,
+      "review_count": 612,
+      "description": "OEM door gasket/seal for the fresh food (refrigerator) compartment. Magnetic closure creates an airtight seal to maintain temperature. Replaces torn, cracked, or compressed gaskets. Comes with adhesive for secure installation.",
+      "in_stock": true,
+      "difficulty": "Moderate",
+      "repair_time": "30-60 minutes",
+      "part_type": "door_gasket_fridge",
+      "compatible_brands": ["Whirlpool", "Maytag", "Amana"],
+      "compatible_models": [
+        "WRS325SDHZ01", "WRS325SDHZ04",
+        "WRF535SWHZ00", "WRF535SWHZ01",
+        "WRS555SIHZ00",
+        "WRT518SZFM00",
+        "MFI2570FEZ00"
+      ],
+      "symptoms": [
+        "refrigerator not staying cold",
+        "warm refrigerator",
+        "door seal torn",
+        "door gasket damaged",
+        "condensation inside fridge",
+        "fridge running constantly",
+        "door not sealing properly"
+      ]
+    },
+    {
+      "part_number": "PS11750593",
+      "name": "Refrigerator Water Inlet Valve (Dual Outlet)",
+      "category": "refrigerator",
+      "price": 35.99,
+      "rating": 4.6,
+      "review_count": 987,
+      "description": "Dual-outlet water inlet valve controls water flow to both the ice maker and water dispenser. Replaces a faulty valve that causes no water or ice, or continuous water flow. 120V, 60Hz solenoid valve.",
+      "in_stock": true,
+      "difficulty": "Moderate",
+      "repair_time": "20-40 minutes",
+      "part_type": "water_inlet_valve",
+      "compatible_brands": ["Whirlpool", "KitchenAid", "Amana"],
+      "compatible_models": [
+        "WRS325SDHZ01", "WRS325SDHZ04",
+        "WRF535SWHZ00", "WRF535SWHZ01",
+        "WRS555SIHZ00", "WRS555SIHZ01",
+        "WRX735SDHZ00",
+        "KRFF507HPS00"
+      ],
+      "symptoms": [
+        "no water from dispenser",
+        "water dispenser not working",
+        "ice maker not getting water",
+        "water dispenser stopped",
+        "refrigerator leaking water",
+        "water continuously dispensing"
+      ]
+    },
+    {
+      "part_number": "PS12584916",
+      "name": "Freezer Evaporator Fan Motor",
+      "category": "refrigerator",
+      "price": 68.39,
+      "rating": 4.4,
+      "review_count": 756,
+      "description": "Evaporator fan motor circulates cold air from the freezer into the refrigerator compartment. A failed motor causes the refrigerator to stop cooling while the freezer remains cold. Direct replacement with mounting hardware included.",
+      "in_stock": true,
+      "difficulty": "Moderate",
+      "repair_time": "30-45 minutes",
+      "part_type": "evaporator_fan",
+      "compatible_brands": ["Whirlpool", "Maytag", "Amana", "KitchenAid"],
+      "compatible_models": [
+        "WRS325SDHZ01", "WRS325SDHZ04",
+        "WRF535SWHZ00",
+        "WRS555SIHZ00",
+        "WRT518SZFM00",
+        "MFI2570FEZ00"
+      ],
+      "symptoms": [
+        "refrigerator not cooling",
+        "fridge warm but freezer cold",
+        "refrigerator section warm",
+        "loud noise from freezer",
+        "humming noise from freezer",
+        "refrigerator stopped cooling"
+      ]
+    },
+    {
+      "part_number": "PS11746329",
+      "name": "Compressor Start Relay",
+      "category": "refrigerator",
+      "price": 14.99,
+      "rating": 4.6,
+      "review_count": 2134,
+      "description": "Overload and start relay for the compressor. If the relay fails, the compressor won't start and the refrigerator won't cool. Shake test: if you hear rattling, the relay is bad. Simple plug-in replacement.",
+      "in_stock": true,
+      "difficulty": "Easy",
+      "repair_time": "10-15 minutes",
+      "part_type": "start_relay",
+      "compatible_brands": ["Frigidaire", "Electrolux", "Kenmore"],
+      "compatible_models": [
+        "FFSS2615TS0", "FFSS2615TS1", "FFSS2615TS2",
+        "FRSS2323AS0", "FRSS2323AS1",
+        "FFHB2750TS2", "FFHB2750TS3",
+        "FGHB2868TE4", "FGHB2868TE5"
+      ],
+      "symptoms": [
+        "refrigerator not cooling",
+        "compressor not starting",
+        "clicking sound from refrigerator",
+        "refrigerator completely stopped working",
+        "fridge not running",
+        "refrigerator warm entire unit"
+      ]
+    },
+    {
+      "part_number": "PS11770397",
+      "name": "Refrigerator Defrost Timer",
+      "category": "refrigerator",
+      "price": 22.95,
+      "rating": 4.3,
+      "review_count": 441,
+      "description": "Mechanical defrost timer controls automatic defrost cycles. A faulty timer can cause excessive frost buildup in the freezer or prevent defrost cycles, leading to cooling issues. Mounts directly in the original location.",
+      "in_stock": true,
+      "difficulty": "Moderate",
+      "repair_time": "20-30 minutes",
+      "part_type": "defrost_timer",
+      "compatible_brands": ["GE", "Hotpoint", "RCA"],
+      "compatible_models": [
+        "GSS25GSHSS", "GSS25GSHSS1",
+        "GSF26C4EXY00", "GSF26C4EXA00",
+        "GTH18DCXARBB", "GTH18DCXARWW",
+        "PSHF6PGZB BB", "PSHF6PGZB WW"
+      ],
+      "symptoms": [
+        "freezer frost buildup",
+        "excessive frost in freezer",
+        "refrigerator not defrosting",
+        "ice buildup on freezer walls",
+        "freezer frosted over",
+        "defrost cycle not working"
+      ]
+    },
+    {
+      "part_number": "PS11770398",
+      "name": "Defrost Heater Assembly",
+      "category": "refrigerator",
+      "price": 45.99,
+      "rating": 4.5,
+      "review_count": 598,
+      "description": "Glass defrost heater for the evaporator coils. Melts frost accumulation during defrost cycles. A burned-out heater causes ice buildup on the coils, blocking airflow and reducing cooling. Includes brackets and wire connectors.",
+      "in_stock": true,
+      "difficulty": "Advanced",
+      "repair_time": "45-75 minutes",
+      "part_type": "defrost_heater",
+      "compatible_brands": ["Whirlpool", "Kenmore", "Maytag"],
+      "compatible_models": [
+        "WRS325SDHZ01", "WRS325SDHZ04",
+        "WRF535SWHZ00",
+        "WRS555SIHZ00",
+        "ED5FHAXVQ10", "ED5FHAXVB10",
+        "GSF26C4EXY00"
+      ],
+      "symptoms": [
+        "freezer frost buildup",
+        "excessive frost in freezer",
+        "refrigerator not cooling properly",
+        "ice on evaporator coils",
+        "freezer frosting over quickly"
+      ]
+    },
+    {
+      "part_number": "PS2358533",
+      "name": "Ice Maker Fill Valve",
+      "category": "refrigerator",
+      "price": 29.99,
+      "rating": 4.5,
+      "review_count": 823,
+      "description": "Single-outlet solenoid valve dedicated to the ice maker water supply. Controls water fill into the ice maker tray. Replaces a leaky or non-functioning ice maker fill valve. 120V solenoid with 1/4\" compression fitting.",
+      "in_stock": true,
+      "difficulty": "Moderate",
+      "repair_time": "20-35 minutes",
+      "part_type": "ice_maker_valve",
+      "compatible_brands": ["Whirlpool", "KitchenAid", "Maytag"],
+      "compatible_models": [
+        "WRS325SDHZ01", "WRS325SDHZ04",
+        "WRF535SWHZ00", "WRF535SWHZ01",
+        "WRS555SIHZ00",
+        "KRFF507HPS00",
+        "WRX735SDHZ00"
+      ],
+      "symptoms": [
+        "ice maker not getting water",
+        "ice maker not making ice",
+        "ice maker leaking",
+        "ice maker overflow",
+        "small ice cubes",
+        "ice maker not filling"
+      ]
+    },
+    {
+      "part_number": "PS11722548",
+      "name": "Refrigerator Temperature Control Thermostat",
+      "category": "refrigerator",
+      "price": 49.99,
+      "rating": 4.4,
+      "review_count": 367,
+      "description": "Cold control thermostat for the refrigerator compartment. Monitors temperature and signals the compressor to cycle on/off. A faulty thermostat causes the refrigerator to run too cold, too warm, or continuously.",
+      "in_stock": false,
+      "difficulty": "Moderate",
+      "repair_time": "20-30 minutes",
+      "part_type": "thermostat",
+      "compatible_brands": ["GE", "Hotpoint", "RCA"],
+      "compatible_models": [
+        "GSS25GSHSS", "GSS25GSHSS1",
+        "GSF26C4EXY00", "GSF26C4EXA00",
+        "GTH18DCXARBB", "GTH18DCXARWW"
+      ],
+      "symptoms": [
+        "refrigerator too cold",
+        "food freezing in refrigerator",
+        "refrigerator running constantly",
+        "refrigerator not cold enough",
+        "temperature fluctuating"
+      ]
+    },
+    {
+      "part_number": "PS11754267",
+      "name": "Refrigerator Glass Shelf",
+      "category": "refrigerator",
+      "price": 65.99,
+      "rating": 4.7,
+      "review_count": 1203,
+      "description": "Genuine OEM glass shelf with plastic frame for the refrigerator compartment. Tempered glass is easy to clean and supports up to 50 lbs. Slides into existing tracks — no tools needed. Direct slide-in replacement.",
+      "in_stock": true,
+      "difficulty": "Easy",
+      "repair_time": "5 minutes",
+      "part_type": "shelf",
+      "compatible_brands": ["Whirlpool", "Maytag", "Amana"],
+      "compatible_models": [
+        "WRS325SDHZ01", "WRS325SDHZ04",
+        "WRF535SWHZ00",
+        "WRS555SIHZ00",
+        "WRT518SZFM00"
+      ],
+      "symptoms": [
+        "broken shelf",
+        "cracked shelf",
+        "shelf replacement",
+        "missing shelf"
+      ]
+    },
+    {
+      "part_number": "PS11766234",
+      "name": "Refrigerator LED Light Board",
+      "category": "refrigerator",
+      "price": 42.99,
+      "rating": 4.5,
+      "review_count": 445,
+      "description": "LED interior light board assembly for the fresh food compartment. Plug-and-play replacement for dim or non-functioning interior lights. Long-lasting LED provides bright, even illumination without heat.",
+      "in_stock": true,
+      "difficulty": "Easy",
+      "repair_time": "10-15 minutes",
+      "part_type": "led_light",
+      "compatible_brands": ["Samsung", "LG"],
+      "compatible_models": [
+        "RF28R7351SR", "RF28R7351SR/AA",
+        "RF27T5501SR", "RF27T5501SR/AA",
+        "LRMVS3006S", "LRMVS3006S/AA",
+        "LRFXS2503S", "LRFXS2503S/AA"
+      ],
+      "symptoms": [
+        "refrigerator light not working",
+        "interior light out",
+        "dark inside refrigerator",
+        "light bulb out"
+      ]
+    },
+    {
+      "part_number": "PS11748232",
+      "name": "Crisper Drawer",
+      "category": "refrigerator",
+      "price": 31.49,
+      "rating": 4.6,
+      "review_count": 789,
+      "description": "Replacement humidity-controlled crisper drawer for the produce compartment. Exact OEM fit — slides directly into existing drawer glides. Clear plastic for easy visibility.",
+      "in_stock": true,
+      "difficulty": "Easy",
+      "repair_time": "5 minutes",
+      "part_type": "drawer",
+      "compatible_brands": ["Whirlpool", "Maytag", "Amana"],
+      "compatible_models": [
+        "WRS325SDHZ01", "WRS325SDHZ04",
+        "WRF535SWHZ00",
+        "WRT518SZFM00",
+        "MFI2570FEZ00"
+      ],
+      "symptoms": [
+        "broken crisper drawer",
+        "cracked crisper",
+        "drawer broken",
+        "crisper replacement"
+      ]
+    },
+    {
+      "part_number": "PS11765012",
+      "name": "Ice Dispenser Door Motor",
+      "category": "refrigerator",
+      "price": 34.99,
+      "rating": 4.3,
+      "review_count": 312,
+      "description": "Dispenser door motor and actuator assembly for the ice and water dispenser flap. A failed motor prevents the dispenser door from opening, blocking ice or water flow. Includes mounting screws.",
+      "in_stock": true,
+      "difficulty": "Moderate",
+      "repair_time": "20-30 minutes",
+      "part_type": "dispenser_motor",
+      "compatible_brands": ["Whirlpool", "KitchenAid"],
+      "compatible_models": [
+        "WRS325SDHZ01", "WRS325SDHZ04",
+        "WRF535SWHZ00",
+        "WRS555SIHZ00",
+        "KRFF507HPS00"
+      ],
+      "symptoms": [
+        "ice dispenser not dispensing",
+        "dispenser door stuck",
+        "ice not coming out",
+        "dispenser flap not opening"
+      ]
+    },
+    {
+      "part_number": "PS11752890",
+      "name": "Refrigerator Door Bin (Large)",
+      "category": "refrigerator",
+      "price": 24.99,
+      "rating": 4.7,
+      "review_count": 934,
+      "description": "Large gallon-size door bin for the refrigerator door. Snaps directly into the door liner — no tools required. Holds milk jugs, juice pitchers, and large bottles. OEM quality clear plastic.",
+      "in_stock": true,
+      "difficulty": "Easy",
+      "repair_time": "2 minutes",
+      "part_type": "door_bin",
+      "compatible_brands": ["Whirlpool", "Maytag", "Amana"],
+      "compatible_models": [
+        "WRS325SDHZ01", "WRS325SDHZ04",
+        "WRF535SWHZ00",
+        "WRS555SIHZ00",
+        "WRT518SZFM00",
+        "MFI2570FEZ00"
+      ],
+      "symptoms": [
+        "broken door bin",
+        "cracked door shelf",
+        "door bin replacement",
+        "shelf broken on door"
+      ]
+    },
+    {
+      "part_number": "PS11747476",
+      "name": "Dishwasher Door Latch Assembly",
+      "category": "dishwasher",
+      "price": 42.05,
+      "rating": 4.6,
+      "review_count": 1423,
+      "description": "Complete door latch assembly for Whirlpool and KitchenAid dishwashers. Includes latch, strike, and door switch. A faulty latch prevents the dishwasher door from closing properly, causing the machine to not start. OEM replacement.",
+      "in_stock": true,
+      "difficulty": "Easy",
+      "repair_time": "15-25 minutes",
+      "part_type": "door_latch",
+      "compatible_brands": ["Whirlpool", "KitchenAid", "Maytag"],
+      "compatible_models": [
+        "WDT780SAEM1", "WDT780SAEM2", "WDT780SAEM3",
+        "WDT730PAHZ0", "WDT730PAHZ1",
+        "WDTA50SAHZ0", "WDTA50SAHZ1",
+        "WDF520PADM7", "WDF520PADM8",
+        "KDTE234GPS0", "KDTE234GPS1",
+        "MDB8959SKZ0", "MDB8959SKZ1",
+        "WDT970SAHZ0", "WDT970SAHZ1",
+        "WDT750SAKZ0"
+      ],
+      "symptoms": [
+        "dishwasher door not closing",
+        "dishwasher door won't latch",
+        "dishwasher not starting",
+        "dishwasher door latch broken",
+        "door won't stay closed",
+        "dishwasher won't run"
+      ]
+    },
+    {
+      "part_number": "PS3408057",
+      "name": "Dishwasher Pump and Motor Assembly",
+      "category": "dishwasher",
+      "price": 158.09,
+      "rating": 4.4,
+      "review_count": 687,
+      "description": "Complete wash pump and motor assembly for the main circulation system. Drives the spray arms and recirculates water during the wash cycle. Replaces a noisy, leaking, or non-functioning pump. Includes all mounting hardware and gaskets.",
+      "in_stock": true,
+      "difficulty": "Advanced",
+      "repair_time": "60-90 minutes",
+      "part_type": "pump_motor",
+      "compatible_brands": ["Whirlpool", "KitchenAid", "Maytag"],
+      "compatible_models": [
+        "WDT780SAEM1", "WDT780SAEM2",
+        "WDT730PAHZ0", "WDT730PAHZ1",
+        "WDTA50SAHZ0",
+        "WDF520PADM7",
+        "KDTE234GPS0",
+        "MDB8959SKZ0",
+        "WDT970SAHZ0"
+      ],
+      "symptoms": [
+        "dishwasher not washing",
+        "dishwasher not cleaning dishes",
+        "dishwasher making grinding noise",
+        "dishwasher loud noise",
+        "dishes not getting clean",
+        "dishwasher pump noise"
+      ]
+    },
+    {
+      "part_number": "PS11765789",
+      "name": "Dishwasher Upper Spray Arm",
+      "category": "dishwasher",
+      "price": 29.99,
+      "rating": 4.7,
+      "review_count": 1089,
+      "description": "Upper spray arm for the top rack of Whirlpool and Maytag dishwashers. Clogged or damaged spray arms lead to poor cleaning of the upper rack items. Snaps into the upper rack assembly without tools.",
+      "in_stock": true,
+      "difficulty": "Easy",
+      "repair_time": "5-10 minutes",
+      "part_type": "spray_arm",
+      "compatible_brands": ["Whirlpool", "KitchenAid", "Maytag"],
+      "compatible_models": [
+        "WDT780SAEM1", "WDT780SAEM2", "WDT780SAEM3",
+        "WDT730PAHZ0", "WDT730PAHZ1",
+        "WDTA50SAHZ0", "WDTA50SAHZ1",
+        "WDF520PADM7",
+        "KDTE234GPS0",
+        "MDB8959SKZ0",
+        "WDT970SAHZ0",
+        "WDT750SAKZ0"
+      ],
+      "symptoms": [
+        "dishes not clean on top rack",
+        "upper rack not cleaning",
+        "glasses not clean",
+        "spray arm broken",
+        "spray arm clogged",
+        "dishwasher not cleaning top rack"
+      ]
+    },
+    {
+      "part_number": "PS11752524",
+      "name": "Dishwasher Lower Spray Arm",
+      "category": "dishwasher",
+      "price": 24.99,
+      "rating": 4.6,
+      "review_count": 934,
+      "description": "Lower spray arm for the bottom rack. Damaged or clogged lower spray arms cause poor cleaning performance on plates, pots, and pans. Attaches via center hub nut — unscrew to remove old arm, screw on new one.",
+      "in_stock": true,
+      "difficulty": "Easy",
+      "repair_time": "5-10 minutes",
+      "part_type": "spray_arm",
+      "compatible_brands": ["Whirlpool", "KitchenAid", "Maytag"],
+      "compatible_models": [
+        "WDT780SAEM1", "WDT780SAEM2",
+        "WDT730PAHZ0",
+        "WDTA50SAHZ0",
+        "WDF520PADM7",
+        "KDTE234GPS0",
+        "MDB8959SKZ0"
+      ],
+      "symptoms": [
+        "dishes not clean on bottom rack",
+        "pots not getting clean",
+        "lower rack dishes dirty",
+        "spray arm cracked",
+        "dishwasher not cleaning bottom"
+      ]
+    },
+    {
+      "part_number": "PS8766820",
+      "name": "Dishwasher Main Control Board",
+      "category": "dishwasher",
+      "price": 189.95,
+      "rating": 4.3,
+      "review_count": 398,
+      "description": "Electronic main control board (PCB) for the dishwasher. Controls all wash cycles, temperature, and timing functions. Replace if the dishwasher won't start, displays error codes, or behaves erratically. Pre-programmed OEM replacement.",
+      "in_stock": true,
+      "difficulty": "Advanced",
+      "repair_time": "30-45 minutes",
+      "part_type": "control_board",
+      "compatible_brands": ["Bosch", "Siemens"],
+      "compatible_models": [
+        "SHPM88Z75N", "SHPM88Z75N/01",
+        "SHPK7TL5UC", "SHPK7TL5UC/01",
+        "SHEM63W55N", "SHEM63W55N/01",
+        "SHP865ZD5N", "SHP865ZD5N/01"
+      ],
+      "symptoms": [
+        "dishwasher not starting",
+        "dishwasher error codes",
+        "control panel not responding",
+        "dishwasher lights flashing",
+        "dishwasher not completing cycle",
+        "dishwasher shuts off mid cycle"
+      ]
+    },
+    {
+      "part_number": "PS11752148",
+      "name": "Dishwasher Door Gasket and Seal",
+      "category": "dishwasher",
+      "price": 28.99,
+      "rating": 4.5,
+      "review_count": 756,
+      "description": "Replacement door tub gasket/seal that runs along the door perimeter. Prevents water from leaking around the door during wash cycles. Installs with a press-fit into the door channel — no adhesive required.",
+      "in_stock": true,
+      "difficulty": "Easy",
+      "repair_time": "15-20 minutes",
+      "part_type": "door_gasket_dishwasher",
+      "compatible_brands": ["Whirlpool", "KitchenAid", "Maytag"],
+      "compatible_models": [
+        "WDT780SAEM1", "WDT780SAEM2", "WDT780SAEM3",
+        "WDT730PAHZ0", "WDT730PAHZ1",
+        "WDTA50SAHZ0",
+        "WDF520PADM7",
+        "KDTE234GPS0",
+        "MDB8959SKZ0",
+        "WDT970SAHZ0"
+      ],
+      "symptoms": [
+        "dishwasher leaking",
+        "water leaking from dishwasher door",
+        "dishwasher leaking from front",
+        "water on kitchen floor after dishwasher",
+        "door seal worn"
+      ]
+    },
+    {
+      "part_number": "PS11748050",
+      "name": "Dishwasher Drain Pump Motor",
+      "category": "dishwasher",
+      "price": 67.99,
+      "rating": 4.5,
+      "review_count": 1102,
+      "description": "Drain pump motor assembly for removing water at the end of each cycle. A failed drain pump leaves standing water in the bottom of the dishwasher. Includes drain pump with mounting gasket. 120V, 60Hz.",
+      "in_stock": true,
+      "difficulty": "Moderate",
+      "repair_time": "30-50 minutes",
+      "part_type": "drain_pump",
+      "compatible_brands": ["Whirlpool", "KitchenAid", "Maytag"],
+      "compatible_models": [
+        "WDT780SAEM1", "WDT780SAEM2", "WDT780SAEM3",
+        "WDT730PAHZ0", "WDT730PAHZ1",
+        "WDTA50SAHZ0",
+        "WDF520PADM7",
+        "KDTE234GPS0",
+        "MDB8959SKZ0",
+        "WDT970SAHZ0",
+        "WDT750SAKZ0"
+      ],
+      "symptoms": [
+        "dishwasher not draining",
+        "standing water in dishwasher",
+        "water in bottom of dishwasher",
+        "dishwasher won't drain",
+        "water left in dishwasher after cycle"
+      ]
+    },
+    {
+      "part_number": "PS11754231",
+      "name": "Dishwasher Silverware Basket",
+      "category": "dishwasher",
+      "price": 32.99,
+      "rating": 4.7,
+      "review_count": 678,
+      "description": "Full-size silverware/utensil basket for the lower rack. Features a removable lid for loading large utensils. Lift-out design for easy unloading. Fits into the standard lower rack slot.",
+      "in_stock": true,
+      "difficulty": "Easy",
+      "repair_time": "2 minutes",
+      "part_type": "silverware_basket",
+      "compatible_brands": ["Whirlpool", "KitchenAid", "Maytag"],
+      "compatible_models": [
+        "WDT780SAEM1", "WDT780SAEM2",
+        "WDT730PAHZ0",
+        "WDTA50SAHZ0",
+        "WDF520PADM7",
+        "KDTE234GPS0",
+        "MDB8959SKZ0"
+      ],
+      "symptoms": [
+        "silverware basket broken",
+        "utensil basket cracked",
+        "basket replacement"
+      ]
+    },
+    {
+      "part_number": "PS11765433",
+      "name": "Dishwasher Upper Rack Adjuster Kit",
+      "category": "dishwasher",
+      "price": 19.99,
+      "rating": 4.5,
+      "review_count": 1567,
+      "description": "Height-adjuster kit for the upper dishwasher rack. Broken adjusters cause the upper rack to fall or not stay in position. Kit includes both left and right adjusters and all mounting hardware. Most common cause of upper rack problems.",
+      "in_stock": true,
+      "difficulty": "Easy",
+      "repair_time": "10-15 minutes",
+      "part_type": "rack_adjuster",
+      "compatible_brands": ["Whirlpool", "KitchenAid", "Maytag"],
+      "compatible_models": [
+        "WDT780SAEM1", "WDT780SAEM2",
+        "WDT730PAHZ0",
+        "WDTA50SAHZ0",
+        "WDF520PADM7",
+        "KDTE234GPS0",
+        "MDB8959SKZ0",
+        "WDT970SAHZ0",
+        "WDT750SAKZ0"
+      ],
+      "symptoms": [
+        "upper rack falling",
+        "top rack won't stay up",
+        "upper rack slides out",
+        "rack adjuster broken",
+        "upper rack won't adjust"
+      ]
+    },
+    {
+      "part_number": "PS11748043",
+      "name": "Dishwasher Heating Element",
+      "category": "dishwasher",
+      "price": 55.99,
+      "rating": 4.4,
+      "review_count": 521,
+      "description": "Calrod heating element mounted in the bottom of the tub. Heats water during the wash cycle and dries dishes during the dry cycle. A burned-out element leaves dishes wet and cold water in the tub. Includes mounting nuts.",
+      "in_stock": true,
+      "difficulty": "Moderate",
+      "repair_time": "25-40 minutes",
+      "part_type": "heating_element",
+      "compatible_brands": ["GE", "Hotpoint", "Profile"],
+      "compatible_models": [
+        "GDT695SSJSS", "GDT695SSJSS0",
+        "PDT845SSJSS", "PDT845SSJSS0",
+        "GDF630SSMSS", "GDF630SSMSS0",
+        "DDT595SSJSS", "DDT595SSJSS0"
+      ],
+      "symptoms": [
+        "dishes not drying",
+        "wet dishes after dishwasher",
+        "dishes not hot after cycle",
+        "dishwasher not heating water",
+        "cold water in dishwasher"
+      ]
+    },
+    {
+      "part_number": "PS11765901",
+      "name": "Dishwasher Detergent Dispenser",
+      "category": "dishwasher",
+      "price": 44.99,
+      "rating": 4.4,
+      "review_count": 612,
+      "description": "Complete detergent and rinse-aid dispenser assembly. Includes main detergent cup, pre-wash cup, rinse aid reservoir, and dispenser door. A cracked or stuck dispenser prevents soap from releasing during the wash cycle.",
+      "in_stock": true,
+      "difficulty": "Moderate",
+      "repair_time": "20-30 minutes",
+      "part_type": "detergent_dispenser",
+      "compatible_brands": ["Whirlpool", "KitchenAid", "Maytag"],
+      "compatible_models": [
+        "WDT780SAEM1", "WDT780SAEM2",
+        "WDT730PAHZ0",
+        "WDTA50SAHZ0",
+        "WDF520PADM7",
+        "KDTE234GPS0",
+        "MDB8959SKZ0"
+      ],
+      "symptoms": [
+        "detergent not dispensing",
+        "soap not releasing",
+        "dishwasher soap door stuck",
+        "detergent cup won't open",
+        "dishes not clean because no soap"
+      ]
+    },
+    {
+      "part_number": "PS11754100",
+      "name": "Dishwasher Float Switch Assembly",
+      "category": "dishwasher",
+      "price": 12.99,
+      "rating": 4.5,
+      "review_count": 387,
+      "description": "Overfill protection float switch. Detects when the water level is too high and shuts off the fill valve. A stuck or faulty float can prevent the dishwasher from filling or cause it to overfill. Quick snap-in replacement.",
+      "in_stock": true,
+      "difficulty": "Easy",
+      "repair_time": "10-15 minutes",
+      "part_type": "float_switch",
+      "compatible_brands": ["Whirlpool", "KitchenAid", "Maytag"],
+      "compatible_models": [
+        "WDT780SAEM1", "WDT780SAEM2",
+        "WDT730PAHZ0",
+        "WDTA50SAHZ0",
+        "WDF520PADM7",
+        "KDTE234GPS0",
+        "WDT970SAHZ0"
+      ],
+      "symptoms": [
+        "dishwasher overfilling",
+        "dishwasher not filling with water",
+        "dishwasher floods",
+        "too much water in dishwasher"
+      ]
+    },
+    {
+      "part_number": "PS11752999",
+      "name": "Dishwasher Door Hinge and Spring Kit",
+      "category": "dishwasher",
+      "price": 22.99,
+      "rating": 4.4,
+      "review_count": 445,
+      "description": "Door hinge and torsion spring kit. Broken or worn springs cause the door to drop too fast or not stay open. Kit includes both left and right hinges and springs. Restores smooth, controlled door operation.",
+      "in_stock": true,
+      "difficulty": "Moderate",
+      "repair_time": "20-30 minutes",
+      "part_type": "door_hinge",
+      "compatible_brands": ["Whirlpool", "KitchenAid", "Maytag"],
+      "compatible_models": [
+        "WDT780SAEM1", "WDT780SAEM2",
+        "WDT730PAHZ0",
+        "WDTA50SAHZ0",
+        "WDF520PADM7",
+        "KDTE234GPS0",
+        "MDB8959SKZ0"
+      ],
+      "symptoms": [
+        "dishwasher door falls down",
+        "door drops too fast",
+        "dishwasher door won't stay open",
+        "door hinge broken",
+        "door spring broken"
+      ]
+    }
+  ]
+}

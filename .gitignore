@@ -1,23 +1,24 @@
 # Dependencies
 node_modules/
 
-# Production build
-build/
+# Next.js build output
+.next/
+out/
 
-# Environment variables
+# Environment variables (never commit these)
 .env
 .env.local
-.env.development.local
-.env.test.local
-.env.production.local
+.env.*.local
 
 # Logs
 npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
 
 # OS
 .DS_Store
 
 # Claude Code settings
 .claude/
+
+# Python cache (from old CRA project)
+__pycache__/
+*.pyc
