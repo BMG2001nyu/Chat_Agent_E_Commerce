@@ -1,7 +1,8 @@
 'use client';
 
-export default function ProductCard({ product }) {
+export default function ProductCard({ product, onAddToCart }) {
   const stars = '★'.repeat(Math.round(product.rating)) + '☆'.repeat(5 - Math.round(product.rating));
+  const detailsUrl = `https://www.partselect.com/PS${product.part_number.replace('PS', '')}-Part.htm`;
 
   return (
     <div className="product-card">
@@ -34,11 +35,17 @@ export default function ProductCard({ product }) {
         <div className="product-actions">
           <button
             className="btn-secondary"
-            onClick={() => window.open(`https://www.partselect.com/PS${product.part_number.replace('PS', '')}-Part.htm`, '_blank')}
+            onClick={() => window.open(detailsUrl, '_blank', 'noopener,noreferrer')}
           >
             View Details
           </button>
-          <button className="btn-primary">Add to Cart</button>
+          <button
+            className="btn-primary"
+            disabled={!product.in_stock}
+            onClick={() => onAddToCart?.(product)}
+          >
+            {product.in_stock ? 'Add to Cart' : 'Unavailable'}
+          </button>
         </div>
       </div>
     </div>

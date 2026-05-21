@@ -1,7 +1,20 @@
 import Anthropic from '@anthropic-ai/sdk';
 import { toolDefinitions, executeTool } from '../../../lib/tools';
+import { buildFallbackResponse, collectToolData } from '../../../lib/fallback-agent';
 
 export const maxDuration = 60;
+
+// Matches appliance model numbers (e.g. WRS325SDHZ01, WDT780SAEM1) but not part numbers (PS + 7-8 digits)
+function extractModelNumber(text) {
+  if (!text || typeof text !== 'string') return null;
+  const matches = text.toUpperCase().matchAll(/\b([A-Z]{2,5}\d{2,8}[A-Z0-9]{0,6})\b/g);
+  for (const match of matches) {
+    const candidate = match[1];
+    if (/^PS\d{7,8}$/.test(candidate)) continue;
+    if (candidate.length >= 7 && /[A-Z]/.test(candidate) && /\d/.test(candidate)) return candidate;
+  }
+  return null;
+}
 
 const SYSTEM_PROMPT = `You are a friendly and knowledgeable customer service assistant for PartSelect.com, one of the leading appliance parts retailers. You specialize exclusively in refrigerator and dishwasher parts and repairs.
 
@@ -14,7 +27,7 @@ You help customers:
 
 SCOPE — STRICTLY ENFORCED:
 - You ONLY assist with refrigerator and dishwasher parts and repairs
-- If asked about any other appliance (washing machine, dryer, oven, range, microwave, dishwasher other than the two supported) politely explain that you specialize in refrigerators and dishwashers only
+- If asked about any other appliance (washing machine, dryer, oven, range, microwave, etc.) politely explain that you specialize in refrigerators and dishwashers only
 - If asked about completely unrelated topics, politely redirect to appliance parts
 
 TOOL USAGE RULES:
@@ -33,17 +46,37 @@ RESPONSE STYLE:
 - Format responses clearly with line breaks between sections`;
 
 export async function POST(request) {
+  let messages = [];
+
   try {
-    const { messages } = await request.json();
+    let body;
+    try {
+      body = await request.json();
+    } catch {
+      return Response.json({ error: 'Invalid JSON body' }, { status: 400 });
+    }
+
+    messages = body?.messages;
+    if (!Array.isArray(messages)) {
+      return Response.json({ error: 'messages must be an array' }, { status: 400 });
+    }
+
+    // Model number memory: client sends what it already knows; we also scan the latest user message
+    const clientModelNumber = body?.modelNumber || null;
+    const latestUserText = [...messages].reverse().find((m) => m.role === 'user')?.content || '';
+    const detectedModel = !clientModelNumber ? extractModelNumber(latestUserText) : null;
+    const sessionModel = clientModelNumber || detectedModel;
 
     if (!process.env.ANTHROPIC_API_KEY) {
-      return Response.json(
-        { error: 'ANTHROPIC_API_KEY is not configured. Add it to your .env.local file.' },
-        { status: 500 }
-      );
+      return Response.json(await buildFallbackResponse(messages));
     }
 
     const anthropic = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
+
+    // Inject the customer's known model number into the system prompt so Claude never asks for it twice
+    const effectiveSystem = sessionModel
+      ? `${SYSTEM_PROMPT}\n\nSESSION CONTEXT: The customer's appliance model number is ${sessionModel}. Use it automatically for all compatibility checks, troubleshooting, and part searches — do not ask them to repeat it.`
+      : SYSTEM_PROMPT;
 
     // Build conversation — only user/assistant text messages
     const conversationMessages = messages.map((m) => ({
@@ -56,6 +89,20 @@ export async function POST(request) {
     let compatibilityResult = null;
     let installationGuide = null;
     let troubleshootResult = null;
+    let orderStatus = null;
+
+    const trackedData = {
+      get products() { return allProducts; },
+      set products(value) { allProducts = value; },
+      get compatibilityResult() { return compatibilityResult; },
+      set compatibilityResult(value) { compatibilityResult = compatibilityResult || value; },
+      get installationGuide() { return installationGuide; },
+      set installationGuide(value) { installationGuide = installationGuide || value; },
+      get troubleshootResult() { return troubleshootResult; },
+      set troubleshootResult(value) { troubleshootResult = troubleshootResult || value; },
+      get orderStatus() { return orderStatus; },
+      set orderStatus(value) { orderStatus = orderStatus || value; },
+    };
 
     let iterations = 0;
     const MAX_ITERATIONS = 10;
@@ -65,9 +112,9 @@ export async function POST(request) {
       iterations++;
 
       const response = await anthropic.messages.create({
-        model: 'claude-sonnet-4-6',
+        model: process.env.ANTHROPIC_MODEL || 'claude-sonnet-4-6',
         max_tokens: 4096,
-        system: SYSTEM_PROMPT,
+        system: effectiveSystem,
         tools: toolDefinitions,
         messages: conversationMessages,
       });
@@ -84,6 +131,8 @@ export async function POST(request) {
           compatibilityResult: compatibilityResult || undefined,
           installationGuide: installationGuide || undefined,
           troubleshootResult: troubleshootResult || undefined,
+          orderStatus: orderStatus || undefined,
+          detectedModel: detectedModel || undefined,
         });
       }
 
@@ -93,30 +142,7 @@ export async function POST(request) {
 
         for (const toolUse of toolUseBlocks) {
           const result = await executeTool(toolUse.name, toolUse.input);
-
-          // Collect structured data for frontend rendering
-          if (result.products?.length > 0) {
-            const newParts = result.products.filter(
-              (p) => p && !allProducts.some((existing) => existing.part_number === p.part_number)
-            );
-            allProducts.push(...newParts);
-          }
-          if (result.compatible !== undefined && !compatibilityResult) {
-            compatibilityResult = result;
-          }
-          if (result.steps && !installationGuide) {
-            installationGuide = result;
-          }
-          if (result.diagnosis && !troubleshootResult) {
-            troubleshootResult = result;
-            // Also collect troubleshoot primary parts
-            if (result.primary_parts?.length > 0) {
-              const newParts = result.primary_parts.filter(
-                (p) => p && !allProducts.some((existing) => existing.part_number === p.part_number)
-              );
-              allProducts.push(...newParts);
-            }
-          }
+          collectToolData(trackedData, result);
 
           toolResultContents.push({
             type: 'tool_result',
@@ -135,6 +161,9 @@ export async function POST(request) {
     });
   } catch (err) {
     console.error('[chat/route] Error:', err);
+    if (messages.length > 0) {
+      return Response.json(await buildFallbackResponse(messages));
+    }
     return Response.json(
       { role: 'assistant', content: 'Sorry, something went wrong. Please try again.' },
       { status: 500 }

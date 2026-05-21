@@ -1,70 +1,98 @@
-# Getting Started with Create React App
+# PartSelect Chat Agent Case Study
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Next.js implementation of a scoped PartSelect commerce assistant for refrigerator and dishwasher parts. The agent helps shoppers diagnose symptoms, find OEM parts, check model compatibility, review installation steps, add parts to a session cart, and look up mock order status.
 
-## Available Scripts
+## Highlights
 
-In the project directory, you can run:
+- **Scoped assistant behavior:** The backend system prompt and local fallback restrict support to refrigerator and dishwasher parts, repairs, compatibility, installation, and orders.
+- **Agentic tool layer:** Chat responses are grounded through explicit tools for catalog search, part lookup, compatibility checks, installation guides, troubleshooting flows, and order status.
+- **Demo-safe fallback:** If `ANTHROPIC_API_KEY` is not configured, the app still answers the core case-study prompts through a deterministic local intent router.
+- **Commerce UX:** Product cards include price, stock state, repair difficulty, estimated repair time, brand fit, PartSelect detail links, and add-to-cart actions.
+- **Extensible data model:** Parts, symptoms, compatible models, and repair metadata are stored in `data/parts.json`; tools in `lib/` provide a clean seam for replacing mock data with live APIs or vector retrieval.
 
-### `npm start`
+## Tech Stack
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Next.js App Router
+- React client components
+- Anthropic Messages API with tool calling
+- Local JSON catalog plus deterministic fallback agent
+- CSS custom properties based on PartSelect red, navy, and blue brand cues
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Run Locally
 
-### `npm test`
+```bash
+npm install
+npm run dev
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Open `http://localhost:3000`.
 
-### `npm run build`
+Optional LLM configuration:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash
+ANTHROPIC_API_KEY=your_key_here
+ANTHROPIC_MODEL=claude-sonnet-4-6
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Without an API key, the app uses the local fallback agent and remains fully demoable for the included scenarios.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Demo Prompts
 
-### `npm run eject`
+Use these in the Loom walkthrough:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```text
+How can I install part number PS11752778?
+Is part PS11752778 compatible with my WDT780SAEM1 model?
+The ice maker on my Whirlpool fridge is not working. How can I fix it?
+My dishwasher has standing water in the bottom after a cycle. It is not draining.
+I want to track my order PS-100422.
+Can you help me fix my dryer?
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+The final prompt demonstrates scope control.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Architecture
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```text
+app/page.js
+  renders the PartSelect shell and chat experience
 
-## Learn More
+components/ChatWindow.js
+  chat state, quick actions, structured cards, session cart
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+app/api/chat/route.js
+  Anthropic tool-calling loop, structured result aggregation, local fallback
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+lib/tools.js
+  tool definitions and execution boundary
 
-### Code Splitting
+lib/catalog.js
+  catalog search, part lookup, compatibility checks
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+lib/troubleshoot.js
+  symptom-to-diagnostic-flow mapping
 
-### Analyzing the Bundle Size
+lib/installation-guides.js
+  repair instructions by part type
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+lib/fallback-agent.js
+  deterministic keyless demo agent
 
-### Making a Progressive Web App
+data/parts.json
+  refrigerator and dishwasher part catalog
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Extensibility Notes
 
-### Advanced Configuration
+- Replace `data/parts.json` with a product API or indexed catalog without changing the UI contract.
+- Add new appliance scopes by extending tool schemas, catalog categories, and diagnostic flows.
+- Add vector search by swapping `searchParts` with embeddings-backed retrieval while keeping `search_parts` as the agent-facing tool.
+- Persist carts and orders by replacing the mock order map in `lib/tools.js` with customer/account services.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Loom Walkthrough Outline
 
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+1. Explain the constrained use case and why strict scope control matters for customer support.
+2. Show the UI: quick actions, product cards, compatibility badge, install guide, diagnostic card, order card, and cart summary.
+3. Walk through the backend route: system prompt, tools, agentic loop, and structured response aggregation.
+4. Show the fallback agent to prove the app is reviewable without secrets.
+5. Close with scalability: real catalog/API integration, vector retrieval, user account orders, and expanded appliance categories.

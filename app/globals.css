@@ -13,6 +13,8 @@
   --ps-green: #16a34a;
   --ps-red-light: #fee2e2;
   --ps-green-light: #dcfce7;
+  --ps-yellow: #fbbf24;
+  --ps-ink: #0f172a;
   --header-h: 60px;
   --input-h: 72px;
 }
@@ -26,10 +28,10 @@
 html,
 body {
   height: 100%;
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-family: 'Avenir Next', 'Trebuchet MS', sans-serif;
   font-size: 14px;
   color: var(--ps-dark);
-  background: var(--ps-gray-100);
+  background: #edf3fb;
 }
 
 /* ─── App Shell ─────────────────────────────────────────── */
@@ -93,24 +95,194 @@ body {
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  background:
+    radial-gradient(circle at 16% 8%, rgba(0, 85, 165, 0.16), transparent 26%),
+    radial-gradient(circle at 82% 18%, rgba(212, 27, 44, 0.12), transparent 24%),
+    linear-gradient(135deg, #f8fbff 0%, #eef5fd 42%, #e9eff8 100%);
+}
+
+/* ─── Layout ────────────────────────────────────────────── */
+.chat-layout {
+  flex: 1;
+  min-height: 0;
+  width: min(1180px, 100%);
+  margin: 0 auto;
+  padding: 24px;
+  display: grid;
+  grid-template-columns: 320px minmax(0, 1fr);
+  gap: 24px;
+  overflow: hidden;
+}
+
+.assistant-panel {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  min-height: 0;
+  padding: 26px;
+  color: var(--ps-white);
+  background:
+    linear-gradient(145deg, rgba(0, 48, 135, 0.96), rgba(0, 85, 165, 0.88)),
+    repeating-linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0 1px, transparent 1px 12px);
+  border-radius: 22px;
+  box-shadow: 0 22px 45px rgba(0, 48, 135, 0.24);
+  overflow: hidden;
+}
+
+.assistant-panel::after {
+  content: "";
+  position: absolute;
+  right: -54px;
+  bottom: -54px;
+  width: 170px;
+  height: 170px;
+  border-radius: 50%;
+  background: rgba(212, 27, 44, 0.55);
+}
+
+.panel-eyebrow {
+  width: fit-content;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-family: 'Trebuchet MS', 'Avenir Next', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: rgba(255, 255, 255, 0.16);
+}
+
+.assistant-panel h1 {
+  position: relative;
+  z-index: 1;
+  font-family: 'Trebuchet MS', 'Avenir Next', sans-serif;
+  font-size: clamp(28px, 4vw, 40px);
+  line-height: 0.98;
+  letter-spacing: -0.04em;
+}
+
+.assistant-panel p {
+  position: relative;
+  z-index: 1;
+  color: rgba(255, 255, 255, 0.78);
+  line-height: 1.55;
+}
+
+.capability-list {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 8px;
+}
+
+.capability-list span {
+  padding: 10px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.1);
+  font-family: 'Trebuchet MS', 'Avenir Next', sans-serif;
+  font-weight: 600;
+}
+
+/* ─── Model Number Indicator ────────────────────────────── */
+.model-indicator {
+  position: relative;
+  z-index: 1;
+  padding: 12px 14px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.13);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+}
+
+.model-indicator-label {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.model-indicator-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.model-indicator-number {
+  font-family: 'Trebuchet MS', monospace;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--ps-white);
+}
+
+.model-clear-btn {
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 18px;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0 2px;
+  transition: color 0.15s;
+}
+
+.model-clear-btn:hover {
+  color: var(--ps-white);
+}
+
+.cart-summary {
+  position: relative;
+  z-index: 1;
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.92);
+  color: var(--ps-ink);
+}
+
+.cart-summary strong,
+.cart-total {
+  display: block;
+  font-family: 'Trebuchet MS', 'Avenir Next', sans-serif;
+  font-size: 18px;
+}
+
+.cart-label {
+  display: block;
+  margin-bottom: 2px;
+  font-size: 11px;
+  color: var(--ps-gray-500);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
 }
 
 /* ─── Chat Wrapper ──────────────────────────────────────── */
 .chat-wrapper {
   display: flex;
   flex-direction: column;
-  flex: 1;
+  min-width: 0;
+  min-height: 0;
   overflow: hidden;
-  max-width: 860px;
   width: 100%;
-  margin: 0 auto;
   background: var(--ps-white);
-  box-shadow: 0 0 24px rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(0, 48, 135, 0.1);
+  border-radius: 22px;
+  box-shadow: 0 24px 55px rgba(15, 23, 42, 0.12);
 }
 
 /* ─── Messages ──────────────────────────────────────────── */
 .messages-container {
   flex: 1;
+  min-height: 0;
   overflow-y: auto;
   padding: 24px 20px;
   display: flex;
@@ -145,7 +317,7 @@ body {
 
 .message {
   padding: 12px 16px;
-  border-radius: 12px;
+  border-radius: 16px;
   line-height: 1.55;
   font-size: 13.5px;
 }
@@ -158,8 +330,9 @@ body {
 }
 
 .assistant-message {
-  background: var(--ps-gray-100);
+  background: #f8fafc;
   color: var(--ps-dark);
+  border: 1px solid #e5edf7;
   border-top-left-radius: 3px;
   width: 100%;
 }
@@ -228,6 +401,7 @@ body {
   cursor: pointer;
   transition: all 0.15s;
   white-space: nowrap;
+  box-shadow: 0 4px 12px rgba(0, 48, 135, 0.05);
 }
 
 .quick-action-btn:hover {
@@ -428,6 +602,11 @@ body {
 
 .btn-primary:hover { background: #b5172a; }
 
+.btn-primary:disabled {
+  background: var(--ps-gray-500);
+  cursor: not-allowed;
+}
+
 .btn-secondary {
   padding: 8px 16px;
   background: transparent;
@@ -444,6 +623,26 @@ body {
   background: var(--ps-light-blue);
 }
 
+/* ─── Add All to Cart Button ────────────────────────────── */
+.add-all-btn {
+  width: 100%;
+  padding: 11px 16px;
+  margin-top: 4px;
+  background: var(--ps-navy);
+  color: var(--ps-white);
+  border: none;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s;
+  text-align: center;
+}
+
+.add-all-btn:hover {
+  background: var(--ps-blue);
+}
+
 /* ─── Compatibility Badge ───────────────────────────────── */
 .compatibility-badge {
   display: inline-flex;
@@ -454,6 +653,7 @@ body {
   font-size: 13px;
   font-weight: 600;
   margin-top: 10px;
+  border: 1px solid currentColor;
 }
 
 .compatibility-badge.compatible {
@@ -557,4 +757,162 @@ body {
 .guide-tips li {
   margin-bottom: 4px;
   line-height: 1.45;
+}
+
+/* ─── Diagnostic and Order Cards ────────────────────────── */
+.insight-card,
+.order-card {
+  width: 100%;
+  margin-top: 12px;
+  border: 1.5px solid var(--ps-gray-200);
+  border-radius: 12px;
+  background: var(--ps-white);
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.06);
+}
+
+.insight-card {
+  padding: 16px;
+}
+
+.insight-kicker {
+  width: fit-content;
+  margin-bottom: 8px;
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: var(--ps-light-blue);
+  color: var(--ps-navy);
+  font-family: 'Trebuchet MS', 'Avenir Next', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.insight-card h4 {
+  margin-bottom: 6px;
+  font-family: 'Trebuchet MS', 'Avenir Next', sans-serif;
+  font-size: 17px;
+  color: var(--ps-ink);
+}
+
+.insight-card p {
+  color: var(--ps-gray-700);
+  line-height: 1.55;
+}
+
+.check-first {
+  margin-top: 12px;
+  padding: 10px 12px;
+  border-left: 4px solid var(--ps-yellow);
+  border-radius: 8px;
+  background: #fffbeb;
+  color: #78350f;
+  font-size: 12.5px;
+}
+
+.insight-meta {
+  margin-top: 10px;
+  font-size: 12px;
+  color: var(--ps-gray-500);
+}
+
+.order-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 14px;
+  background: var(--ps-navy);
+  color: var(--ps-white);
+  font-family: 'Trebuchet MS', 'Avenir Next', sans-serif;
+}
+
+.order-card-body {
+  padding: 14px;
+  color: var(--ps-gray-700);
+  line-height: 1.55;
+}
+
+.order-card-body ul {
+  margin-top: 8px;
+  padding-left: 18px;
+}
+
+@media (max-width: 900px) {
+  .header-title {
+    display: none;
+  }
+
+  .chat-layout {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    padding: 14px;
+    overflow-y: auto;
+  }
+
+  .assistant-panel {
+    min-height: auto;
+    padding: 18px;
+    border-radius: 18px;
+  }
+
+  .assistant-panel h1 {
+    font-size: 27px;
+  }
+
+  .capability-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .chat-wrapper {
+    min-height: 72vh;
+    border-radius: 18px;
+  }
+
+  .messages-container {
+    padding: 18px 14px;
+    padding-bottom: calc(var(--input-h) + 18px);
+  }
+
+  .user-message {
+    max-width: 88%;
+  }
+
+  .input-area {
+    padding: 12px;
+  }
+
+  .product-card-footer {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .product-actions {
+    width: 100%;
+  }
+
+  .product-actions button {
+    flex: 1;
+  }
+}
+
+@media (max-width: 560px) {
+  .header-scope {
+    display: none;
+  }
+
+  .capability-list {
+    grid-template-columns: 1fr;
+  }
+
+  .input-area {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .send-button {
+    width: 100%;
+  }
 }
